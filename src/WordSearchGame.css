@@ -1,0 +1,114 @@
+.wordsearch-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* Mostrar la sopa de letras solo en pantallas móviles */
+@media (max-width: 768px) {
+  .wordsearch-container {
+    display: flex;
+  }
+}
+
+.timer {
+  font-size: 1em; /* Reducir tamaño de la fuente del temporizador */
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 30px); /* Ajustar tamaño de las celdas para la cuadrícula 12x12 */
+  gap: 5px;
+  user-select: none;
+}
+
+.cell {
+  width: 30px; /* Ajustar tamaño de las celdas */
+  height: 30px; /* Ajustar tamaño de las celdas */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}
+
+.cell.selected {
+  background-color: #5da559; /* Verde para interacción del usuario */
+}
+
+.cell.found {
+  background-color: #5da559; /* Verde para palabras encontradas manualmente */
+}
+
+.cell.revealed {
+  background-color: #ff69b4; /* Rosa para palabras reveladas por pistas */
+}
+
+.word-list {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.words-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Ajustar el número de columnas */
+  gap: 10px;
+}
+
+.word-item {
+  font-size: 0.9em; /* Reducir tamaño de la fuente de las palabras */
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+}
+
+.word-item.found {
+  color: #5da559; /* Verde para palabras encontradas manualmente */
+}
+
+.word-item.revealed {
+  color: #ff69b4; /* Rosa para palabras reveladas por pistas */
+}
+
+.message {
+  font-weight: bold;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal-button {
+  background-color: #5da559;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.modal-button:hover {
+  background-color: #4b8e44;
+}
